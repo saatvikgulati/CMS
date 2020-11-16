@@ -7,6 +7,9 @@ pip install py3dns<br>
 pip install django-crispy-forms<br>
 pip install Pillow<br></p>
 
+# Admin Credentials
+Username: saatvik
+Password: saatvik
 # Things to be added in cms/settings.py before running
 SECRET_KEY = '&d(r_6kc&t6k8%a)$ssmm)yhtgwm*_nq24ye*=o!$rqpl7)pf^'  <br>
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'  <br>
