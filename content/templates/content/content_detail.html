@@ -1,0 +1,30 @@
+{%  extends "content/base.html" %}
+{% block content %}
+         
+       <article class="media content-section">
+           <div class="media-body">
+           <div class="article-metadata">
+               <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
+               <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+               {%if object.author == user or user.is_superuser %}
+               <a href="{%url 'content-update' object.id%}" class="btn btn-secondary btn-sm mt-1 mb-1 material-icons">update</a>
+               <a href="{%url 'content-delete' object.id%}" class="btn btn-outline-danger btn-sm mt-1 mb-1 material-icons">delete_forever</a>
+               {%endif%}
+           </div>
+           <h2><a class="article-title" href="{%url 'content-detail' object.id%}">{{ object.title }}</a></h2>
+           <p class="article-content">{{ object.content }}</p>
+           </div>
+       </article>
+      <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=object.id %}">Add comment</a>
+       {% for comment in comments %}
+       {% if user.is_authenticated %}
+       <div class="comment">
+           <div class="date">{{ comment.created_on }}</div>
+           <strong>{{ comment.author }}</strong>
+           <p>{{ comment.body|linebreaks }}</p>
+       </div>
+       {% endif %}
+       {% empty %}
+       <p>No Comments</p>
+       {% endfor %}
+{% endblock content %}
