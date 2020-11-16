@@ -13,12 +13,12 @@ pip install Pillow<br></p>
 Type on the browser- localhost:8000/content/ which will open the site interface </p>
 
 # Registeration
-<p>For the author to post anything he would have to register first.<br>
+<p>For the author to post anything he would have to <strong>register</strong> first.<br>
 
 Click on the register button on the top right corner<br>
 Fill in the details and submit.<br>
 
-The registeration is successful but the profile is not yet complete the author can do it in his/her own time</p>
+The <strong>registeration is successful</strong> but the profile is not yet complete the author can do it in his/her own time</p>
 
 # Login
 <p> Author can logout and login again with the same credentials. These buttons are there in the navbar </p>
